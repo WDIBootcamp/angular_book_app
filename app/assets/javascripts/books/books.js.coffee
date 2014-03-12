@@ -1,6 +1,7 @@
 # add dependencies in the array
 
 BookApp = angular.module("BookApp", [
+  "BookRouter",
   "BookAppCtrls"
 ])
 
@@ -10,10 +11,10 @@ BookRouter = angular.module("BookRouter", [
 
 # for every module, you can configure something
 BookRouter.config(["$routeProvider",
-    ($routeProvieder) ->
+    ($routeProvider) ->
 
       $routeProvider.when("/",
-        templateUrl: ""
+        templateUrl: "/books"
         controller: "BooksCtrl"
       )
 
