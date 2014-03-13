@@ -9,9 +9,6 @@ BookRouter.config(["$routeProvider",
       $routeProvider.when("/",
         templateUrl: "/books"
         controller: "BooksCtrl"
-      ).when("/books",
-        templateUrl: "/books"
-        controller: "BooksCtrl"
       ).when("/books/:id",
         templateUrl: "/books/:id"
         controller: "BooksDetailsCtrl"

@@ -2,16 +2,15 @@ BookAppCtrls = angular.module("BookAppCtrls", [])
 
 # BooksCtrl is a service
 BookAppCtrls.controller("BooksCtrl", [
-  "$scope", "$http"
-    ($scope, $http)->
+  "$scope", "$http", "BookRes"
+    ($scope, $http, BookRes)->
 
           $scope.newBooks = []
 
-          $http.get("/books.json").
-              success((data) ->
-                  console.log(data);
-                  $scope.newBooks = $scope.newBooks.concat(data);
-            )
+          BookRes.query((data) ->
+              console.log(data);
+              $scope.newBooks = $scope.newBooks.concat(data);
+              )
 
           $scope.book = {};
           $scope.saveBook = ->
@@ -27,6 +26,11 @@ BookAppCtrls.controller("BooksCtrl", [
               console.log(data)
               $scope.newBooks.push(data)
               )
+
+          # BookRes.query((data) ->
+          #     console.log(data)
+          #     $scope.newBooks.push(data)
+          #     )
 
 ])
 
