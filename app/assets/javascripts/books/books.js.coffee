@@ -5,17 +5,8 @@ BookApp = angular.module("BookApp", [
   "BookAppCtrls"
 ])
 
-BookRouter = angular.module("BookRouter", [
-  "ngRoute"
-])
 
-# for every module, you can configure something
-BookRouter.config(["$routeProvider",
-    ($routeProvider) ->
-
-      $routeProvider.when("/",
-        templateUrl: "/books"
-        controller: "BooksCtrl"
-      )
-
-])
+# BookApp.config(["$httpProvider",
+#     function($httpProvider) {
+#      $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
+# }]);
